@@ -37,6 +37,13 @@ public class BoardController {
 
     @PostMapping()
     public String create(@ModelAttribute("card") Card card){
+        if (card.getStatus() == Status.TODO) {
+            todoCardList.add(card);
+        } else if (card.getStatus() == Status.INPROGRESS) {
+            inProgressCardList.add(card);
+        } else if (card.getStatus() == Status.DONE) {
+            doneCardList.add(card);
+        }
         return "redirect:/";
     }
 
