@@ -17,10 +17,11 @@ public class BoardController {
     private List<Card> inProgressCardList = new ArrayList<>();
     private List<Card> doneCardList = new ArrayList<>();
     {
-        todoCardList.add(new Card("a", "bm", Status.TODO, "me"));
-        todoCardList.add(new Card("b", "bbbm", Status.TODO, "me"));
-        doneCardList.add(new Card("c", "bbbm", Status.DONE, "me"));
-        inProgressCardList.add(new Card("d", "bbbm", Status.INPROGRESS, "me"));
+        todoCardList.add(new Card("Create DAO", "Create data access object for getting data from database", Status.TODO, "Max"));
+        todoCardList.add(new Card("Add edit", "Create edit button for editing tasks", Status.TODO, "Max"));
+        doneCardList.add(new Card("Add creation of tasks", "Add a button and a view for creating tasks", Status.DONE, "Max"));
+        inProgressCardList.add(new Card("Add creating page", "Create a page for editing tasks", Status.INPROGRESS, "Max"));
+        inProgressCardList.add(new Card("Create stylesheet", "Ask my roommate to create stylesheet for the main page", Status.INPROGRESS, "Andrew"));
     }
     @GetMapping("/")
     public String board(Model model){

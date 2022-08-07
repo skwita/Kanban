@@ -5,33 +5,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Kanban board</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
 </head>
 <body>
-<h1>Kanban board</h1>
-
-<p>TODO</p>
-<div th:each="card:${todoCards}" style="border: 1px solid black">
-    <p th:text="${card.getName()}">NAME</p>
-    <p th:text="${card.getDescription()}">DESCRIPTION</p>
-    <p th:text="${card.getPerson()}">PERSON</p>
-</div>
-
-<p>IN PROGRESS</p>
-<div th:each="card:${inProgressCards}" style="border: 1px solid black">
-    <p th:text="${card.getName()}">NAME</p>
-    <p th:text="${card.getDescription()}">DESCRIPTION</p>
-    <p th:text="${card.getPerson()}">PERSON</p>
-</div>
-
-<p>DONE</p>
-<div th:each="card:${doneCards}" style="border: 1px solid black">
-    <p th:text="${card.getName()}">NAME</p>
-    <p th:text="${card.getDescription()}">DESCRIPTION</p>
-    <p th:text="${card.getPerson()}">PERSON</p>
-</div>
-
-<div>
-    <a th:href="@{/new}">New task</a>
+<div class="parentBlock">
+    <div>
+        <h1>Kanban board</h1>
+    </div>
+    <div class="cardsBlock">
+        <div class="card">
+            <p>TODO</p>
+            <div class="cardText" th:each="card:${todoCards}">
+                <p th:text="${card.getName()}">NAME</p>
+                <p th:text="${card.getDescription()}">DESCRIPTION</p>
+                <p th:text="${card.getPerson()}">PERSON</p>
+            </div>
+        </div>
+        <div class="card">
+            <p>IN PROGRESS</p>
+            <div class="cardText" th:each="card:${inProgressCards}">
+                <p th:text="${card.getName()}">NAME</p>
+                <p th:text="${card.getDescription()}">DESCRIPTION</p>
+                <p th:text="${card.getPerson()}">PERSON</p>
+            </div>
+        </div>
+        <div class="card">
+            <p>DONE</p>
+            <div class="cardText" th:each="card:${doneCards}">
+                <p th:text="${card.getName()}">NAME</p>
+                <p th:text="${card.getDescription()}">DESCRIPTION</p>
+                <p th:text="${card.getPerson()}">PERSON</p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <a th:href="@{/new}">New task</a>
+    </div>
 </div>
 </body>
 </html>
