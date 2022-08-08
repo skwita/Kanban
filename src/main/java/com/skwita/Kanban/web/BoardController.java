@@ -6,9 +6,8 @@ import com.skwita.Kanban.model.Status;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class BoardController {
@@ -22,11 +21,11 @@ public class BoardController {
     @GetMapping("/")
     public String board(Model model){
         model.addAttribute("todoCards",
-                            cardRepository.findByStatus(Status.TODO));
+                            cardRepository.findByStatusOrderById(Status.TODO));
         model.addAttribute("inProgressCards",
-                            cardRepository.findByStatus(Status.INPROGRESS));
+                            cardRepository.findByStatusOrderById(Status.INPROGRESS));
         model.addAttribute("doneCards",
-                            cardRepository.findByStatus(Status.DONE));
+                            cardRepository.findByStatusOrderById(Status.DONE));
         return "board";
     }
 
@@ -37,6 +36,37 @@ public class BoardController {
 
     @PostMapping()
     public String create(@ModelAttribute("card") Card card){
+        cardRepository.save(card);
+        return "redirect:/";
+    }
+
+    @GetMapping("/{id}/edit")
+    public String editPost(@PathVariable("id") long id,
+                           Model model){
+        model.addAttribute("card", cardRepository.getCardById(id));
+        return "edit_card";
+    }
+
+    @PostMapping("/{id}")
+    public String update(@ModelAttribute("post") Card card){
+        cardRepository.save(card);
+        return "redirect:/";
+    }
+
+    @DeleteMapping("/{id}")
+    public String deletePost(@PathVariable("id") long id){
+        cardRepository.deleteCardById(id);
+        return "redirect:/";
+    }
+
+    @PostMapping("/{id}/move")
+    public String movePost(@PathVariable("id") long id){
+        Card card = cardRepository.getCardById(id);
+        if (card.getStatus() == Status.TODO) {
+            card.setStatus(Status.INPROGRESS);
+        } else if (card.getStatus() == Status.INPROGRESS) {
+            card.setStatus(Status.DONE);
+        }
         cardRepository.save(card);
         return "redirect:/";
     }
