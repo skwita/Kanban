@@ -19,15 +19,17 @@
                 <p th:text="${card.getName()}">NAME</p>
                 <p th:text="${card.getDescription()}">DESCRIPTION</p>
                 <p th:text="${card.getPerson()}">PERSON</p>
-                <form th:method="GET" th:action="@{/{id}/edit(id=${card.getId()})}">
-                    <input type="submit" value="edit">
-                </form>
-                <form th:method="DELETE" th:action="@{/{id}(id=${card.getId()})}">
-                    <input type="submit" value="delete">
-                </form>
-                <form th:method="POST" th:action="@{/{id}/move(id=${card.getId()})}">
-                    <input type="submit" value="->">
-                </form>
+                <div class="buttons">
+                    <form th:method="GET" th:action="@{/{id}/edit(id=${card.getId()})}">
+                        <input type="submit" value="edit">
+                    </form>
+                    <form th:method="DELETE" th:action="@{/{id}(id=${card.getId()})}">
+                        <input type="submit" value="delete">
+                    </form>
+                    <form th:method="POST" th:action="@{/{id}/move(id=${card.getId()})}">
+                        <input type="submit" value="->">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="card">
@@ -36,15 +38,17 @@
                 <p th:text="${card.getName()}">NAME</p>
                 <p th:text="${card.getDescription()}">DESCRIPTION</p>
                 <p th:text="${card.getPerson()}">PERSON</p>
-                <form th:method="GET" th:action="@{/{id}/edit(id=${card.getId()})}">
-                    <input type="submit" value="edit">
-                </form>
-                <form th:method="DELETE" th:action="@{/{id}(id=${card.getId()})}">
-                    <input type="submit" value="delete">
-                </form>
-                <form th:method="POST" th:action="@{/{id}/move(id=${card.getId()})}">
-                    <input type="submit" value="->">
-                </form>
+                <div class="buttons">
+                    <form th:method="GET" th:action="@{/{id}/edit(id=${card.getId()})}">
+                        <input type="submit" value="edit">
+                    </form>
+                    <form th:method="DELETE" th:action="@{/{id}(id=${card.getId()})}">
+                        <input type="submit" value="delete">
+                    </form>
+                    <form th:method="POST" th:action="@{/{id}/move(id=${card.getId()})}">
+                        <input type="submit" value="->">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="card">
@@ -53,12 +57,14 @@
                 <p th:text="${card.getName()}">NAME</p>
                 <p th:text="${card.getDescription()}">DESCRIPTION</p>
                 <p th:text="${card.getPerson()}">PERSON</p>
-                <form th:method="GET" th:action="@{/{id}/edit(id=${card.getId()})}">
-                    <input type="submit" value="edit">
-                </form>
-                <form th:method="DELETE" th:action="@{/{id}(id=${card.getId()})}">
-                    <input type="submit" value="delete">
-                </form>
+                <div class="buttons">
+                    <form th:method="GET" th:action="@{/{id}/edit(id=${card.getId()})}">
+                        <input type="submit" value="edit">
+                    </form>
+                    <form th:method="DELETE" th:action="@{/{id}(id=${card.getId()})}">
+                        <input type="submit" value="delete">
+                    </form>
+                </div>
             </div>
         </div>
     </div>
