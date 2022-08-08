@@ -1,37 +1,58 @@
+.elementCenterPage {
+    text-align: center;
+}
 .parentBlock {
     margin: 0 auto;
-    width: 630px;
+    width: 1500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /*overflow-y: auto;*/
+}
+
+.board {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.statusColumn {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.status {
+    margin: 0 auto;
+    width: 100%;
+    display: block;
+    text-align: center;
 }
 
 .cardsBlock {
+    width: 100%;
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
 }
-
 .card {
-    width: 200px;
-    margin: 5px;
-}
-.cardText {
+    background-color: #ffffff;
+    margin: 5px 5px;
+    padding: 5px;
+    width: 45%;
+    height: max-content;
     border: 1px solid black;
-    margin-bottom: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
+    overflow-wrap: break-word;
 }
 .buttons {
-    width: 200px;
+    width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
-a.button {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-
-    text-decoration: none;
-    color: initial;
+.TODOColumn {
+    background-color: #ffe2dd;
+}
+.INPROGRESSColumn {
+    background-color: #fdecc9;
+}
+.DONEColumn {
+    background-color: #dbeddb;
 }

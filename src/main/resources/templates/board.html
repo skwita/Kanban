@@ -9,66 +9,72 @@
 </head>
 <body>
 <div class="parentBlock">
-    <div>
+    <div class="elementCenterPage">
         <h1>Kanban board</h1>
     </div>
-    <div class="cardsBlock">
-        <div class="card">
-            <p>TODO</p>
-            <div class="cardText" th:each="card:${todoCards}">
-                <p th:text="${card.getName()}">NAME</p>
-                <p th:text="${card.getDescription()}">DESCRIPTION</p>
-                <p th:text="${card.getPerson()}">PERSON</p>
-                <div class="buttons">
-                    <form th:method="GET" th:action="@{/{id}/edit(id=${card.getId()})}">
-                        <input type="submit" value="edit">
-                    </form>
-                    <form th:method="DELETE" th:action="@{/{id}(id=${card.getId()})}">
-                        <input type="submit" value="delete">
-                    </form>
-                    <form th:method="POST" th:action="@{/{id}/move(id=${card.getId()})}">
-                        <input type="submit" value="->">
-                    </form>
+    <div class="board">
+        <div class="statusColumn">
+            <p class="status">TODO</p>
+            <div class="cardsBlock">
+                <div class="card TODOColumn" th:each="card:${todoCards}">
+                    <p th:text="${card.getName()}">NAME</p>
+                    <p th:text="${card.getDescription()}">DESCRIPTION</p>
+                    <p th:text="${card.getPerson()}">PERSON</p>
+                    <div class="buttons">
+                        <form th:method="GET" th:action="@{/{id}/edit(id=${card.getId()})}">
+                            <input type="submit" value="edit">
+                        </form>
+                        <form th:method="DELETE" th:action="@{/{id}(id=${card.getId()})}">
+                            <input type="submit" value="delete">
+                        </form>
+                        <form th:method="POST" th:action="@{/{id}/move(id=${card.getId()})}">
+                            <input type="submit" value="->">
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="card">
-            <p>IN PROGRESS</p>
-            <div class="cardText" th:each="card:${inProgressCards}">
-                <p th:text="${card.getName()}">NAME</p>
-                <p th:text="${card.getDescription()}">DESCRIPTION</p>
-                <p th:text="${card.getPerson()}">PERSON</p>
-                <div class="buttons">
-                    <form th:method="GET" th:action="@{/{id}/edit(id=${card.getId()})}">
-                        <input type="submit" value="edit">
-                    </form>
-                    <form th:method="DELETE" th:action="@{/{id}(id=${card.getId()})}">
-                        <input type="submit" value="delete">
-                    </form>
-                    <form th:method="POST" th:action="@{/{id}/move(id=${card.getId()})}">
-                        <input type="submit" value="->">
-                    </form>
+        <div class="statusColumn">
+            <p class="status">IN PROGRESS</p>
+            <div class="cardsBlock">
+                <div class="card INPROGRESSColumn" th:each="card:${inProgressCards}">
+                    <p th:text="${card.getName()}">NAME</p>
+                    <p th:text="${card.getDescription()}">DESCRIPTION</p>
+                    <p th:text="${card.getPerson()}">PERSON</p>
+                    <div class="buttons">
+                        <form th:method="GET" th:action="@{/{id}/edit(id=${card.getId()})}">
+                            <input type="submit" value="edit">
+                        </form>
+                        <form th:method="DELETE" th:action="@{/{id}(id=${card.getId()})}">
+                            <input type="submit" value="delete">
+                        </form>
+                        <form th:method="POST" th:action="@{/{id}/move(id=${card.getId()})}">
+                            <input type="submit" value="->">
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="card">
-            <p>DONE</p>
-            <div class="cardText" th:each="card:${doneCards}">
-                <p th:text="${card.getName()}">NAME</p>
-                <p th:text="${card.getDescription()}">DESCRIPTION</p>
-                <p th:text="${card.getPerson()}">PERSON</p>
-                <div class="buttons">
-                    <form th:method="GET" th:action="@{/{id}/edit(id=${card.getId()})}">
-                        <input type="submit" value="edit">
-                    </form>
-                    <form th:method="DELETE" th:action="@{/{id}(id=${card.getId()})}">
-                        <input type="submit" value="delete">
-                    </form>
+        <div class="statusColumn">
+            <p class="status">DONE</p>
+            <div class="cardsBlock">
+                <div class="card DONEColumn" th:each="card:${doneCards}">
+                    <p th:text="${card.getName()}">NAME</p>
+                    <p th:text="${card.getDescription()}">DESCRIPTION</p>
+                    <p th:text="${card.getPerson()}">PERSON</p>
+                    <div class="buttons">
+                        <form th:method="GET" th:action="@{/{id}/edit(id=${card.getId()})}">
+                            <input type="submit" value="edit">
+                        </form>
+                        <form th:method="DELETE" th:action="@{/{id}(id=${card.getId()})}">
+                            <input type="submit" value="delete">
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div>
+    <div class="elementCenterPage">
         <form th:method="GET" th:action="@{/new}">
             <input type="submit" value="New task">
         </form>
