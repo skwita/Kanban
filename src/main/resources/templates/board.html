@@ -69,7 +69,9 @@
         </div>
     </div>
     <div>
-        <a th:href="@{/new}">New task</a>
+        <form th:method="GET" th:action="@{/new}">
+            <input type="submit" value="New task">
+        </form>
     </div>
 </div>
 </body>

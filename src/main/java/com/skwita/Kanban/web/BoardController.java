@@ -6,8 +6,10 @@ import com.skwita.Kanban.model.Status;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @Controller
 public class BoardController {
@@ -35,20 +37,26 @@ public class BoardController {
     }
 
     @PostMapping()
-    public String create(@ModelAttribute("card") Card card){
+    public String create(@ModelAttribute("card") @Valid Card card, Errors errors){
+        if (errors.hasErrors()) {
+            return "new_card";
+        }
         cardRepository.save(card);
         return "redirect:/";
     }
 
     @GetMapping("/{id}/edit")
-    public String editPost(@PathVariable("id") long id,
+    public String editCard(@PathVariable("id") long id,
                            Model model){
         model.addAttribute("card", cardRepository.getCardById(id));
         return "edit_card";
     }
 
     @PostMapping("/{id}")
-    public String update(@ModelAttribute("post") Card card){
+    public String update(@ModelAttribute("card") @Valid Card card, Errors errors){
+        if (errors.hasErrors()) {
+            return "edit_card";
+        }
         cardRepository.save(card);
         return "redirect:/";
     }

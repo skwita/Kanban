@@ -1,13 +1,9 @@
 .parentBlock {
+    margin: 0 auto;
     width: 630px;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     /*overflow-y: auto;*/
 }
 
@@ -30,4 +26,12 @@
     width: 200px;
     display: flex;
     justify-content: center;
+}
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
 }
