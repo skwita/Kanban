@@ -1,13 +1,13 @@
 package com.skwita.Kanban.model;
 
 public enum Status {
-    TODO("todo"),
-    INPROGRESS("inprogress"),
-    DONE("done");
+    TODO("To Do"),
+    INPROGRESS("In Progress"),
+    DONE("Done");
 
     private final String displayValue;
 
-    private Status(String displayValue){
+    Status(String displayValue){
         this.displayValue = displayValue;
     }
 

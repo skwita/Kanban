@@ -1,0 +1,56 @@
+*{padding: 0; margin: 0; border: 0}
+.cardCreateEdit {
+    display: flex;
+}
+
+.parentBlock {
+    display:  flex;
+    justify-content: center;
+}
+
+.cardCreateEdit {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.inputField {
+    width: 320px;
+}
+
+.form {
+    background-color: #ffffff;
+    width: 500px;
+}
+
+.inputField textarea {
+    resize: none;
+    height: 100px;
+}
+
+.input {
+    padding: 2px;
+    width: 100%;
+    border: 1px solid;
+}
+
+select.input {
+    width: calc(100% + 6px);
+}
+
+.inputFieldWithErrors {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.elementCenterPage {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
