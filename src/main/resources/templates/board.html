@@ -12,6 +12,32 @@
     <div class="elementCenterPage">
         <h1>Kanban board</h1>
     </div>
+
+    <div class="search">
+        <form th:method="GET" th:action="@{/search}">
+            <div class="inputFields">
+                <div class="inputField">
+                    <label for="text">Search string</label>
+                    <input id="text" type="text" name="text" value="">
+                    <div class="buttonContainer">
+                        <input type="submit" value="Search">
+                        <form th:method="GET" th:href="@{/}">
+                            <input type="submit" value="Clear">
+                        </form>
+                    </div>
+                </div>
+                <div class="inputField">
+                    <label for="field">Search by</label>
+                    <select class="selector" id="field" name="field">
+                        <option th:value="name" th:text="Name"></option>
+                        <option th:value="description" th:text="Description"></option>
+                        <option th:value="person" th:text="Person"></option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+
     <div class="board">
         <div class="statusColumn">
             <p class="status">TODO</p>
@@ -24,10 +50,10 @@
                         <form th:method="GET" th:action="@{/{id}/edit(id=${card.getId()})}">
                             <input type="submit" value="edit">
                         </form>
-                        <form th:method="DELETE" th:action="@{/{id}(id=${card.getId()})}">
+                        <form th:method="DELETE" th:action="@{/{id}/delete(id=${card.getId()})}">
                             <input type="submit" value="delete">
                         </form>
-                        <form th:method="POST" th:action="@{/{id}/move(id=${card.getId()})}">
+                        <form th:method="PATCH" th:action="@{/{id}/move(id=${card.getId()})}">
                             <input type="submit" value="->">
                         </form>
                     </div>
@@ -45,7 +71,7 @@
                         <form th:method="GET" th:action="@{/{id}/edit(id=${card.getId()})}">
                             <input type="submit" value="edit">
                         </form>
-                        <form th:method="DELETE" th:action="@{/{id}(id=${card.getId()})}">
+                        <form th:method="DELETE" th:action="@{/{id}/delete(id=${card.getId()})}">
                             <input type="submit" value="delete">
                         </form>
                         <form th:method="POST" th:action="@{/{id}/move(id=${card.getId()})}">
@@ -66,7 +92,7 @@
                         <form th:method="GET" th:action="@{/{id}/edit(id=${card.getId()})}">
                             <input type="submit" value="edit">
                         </form>
-                        <form th:method="DELETE" th:action="@{/{id}(id=${card.getId()})}">
+                        <form th:method="DELETE" th:action="@{/{id}/delete(id=${card.getId()})}">
                             <input type="submit" value="delete">
                         </form>
                     </div>

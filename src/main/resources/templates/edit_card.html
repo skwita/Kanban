@@ -12,7 +12,7 @@
         <div class="elementCenterPage">
             <h1>Create New Task</h1>
         </div>
-        <form class="form"  th:method="PATCH" th:action="@{/{id}(id=${card.getId()})}" th:object="${card}">
+        <form class="form"  th:method="PATCH" th:action="@{/{id}/edit(id=${card.getId()})}" th:object="${card}">
             <div class="inputFieldWithErrors">
                 <label for="name">Enter task name</label>
                 <div class="inputField">
