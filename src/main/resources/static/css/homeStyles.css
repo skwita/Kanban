@@ -1,6 +1,3 @@
-.elementCenterPage {
-    text-align: center;
-}
 .parentBlock {
     margin: 0 auto;
     width: 1500px;
@@ -14,6 +11,7 @@
     display: flex;
     justify-content: space-around;
 }
+
 .statusColumn {
     width: 30%;
     display: flex;
@@ -22,7 +20,7 @@
 }
 
 .status {
-    margin: 0 auto;
+    margin: 10px auto;
     width: 100%;
     display: block;
     text-align: center;
@@ -33,6 +31,7 @@
     display: flex;
     flex-wrap: wrap;
 }
+
 .card {
     background-color: #ffffff;
     margin: 5px 5px;
@@ -42,17 +41,51 @@
     border: 1px solid black;
     overflow-wrap: break-word;
 }
+
 .buttons {
     width: 100%;
     display: flex;
     justify-content: space-around;
 }
+
 .TODOColumn {
     background-color: #ffe2dd;
 }
+
 .INPROGRESSColumn {
     background-color: #fdecc9;
 }
+
 .DONEColumn {
     background-color: #dbeddb;
+}
+
+.elementCenterPage {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.search {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+.inputFields {
+    margin: 3px;
+    display: flex;
+    flex-direction: row;
+}
+.inputField {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.buttonContainer {
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.selector {
+    height: 22px;
 }
