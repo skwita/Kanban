@@ -74,7 +74,7 @@
                         <form th:method="DELETE" th:action="@{/{id}/delete(id=${card.getId()})}">
                             <input type="submit" value="delete">
                         </form>
-                        <form th:method="POST" th:action="@{/{id}/move(id=${card.getId()})}">
+                        <form th:method="PATCH" th:action="@{/{id}/move(id=${card.getId()})}">
                             <input type="submit" value="->">
                         </form>
                     </div>
