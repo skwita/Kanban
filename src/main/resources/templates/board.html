@@ -11,32 +11,33 @@
 <div class="parentBlock">
     <div class="elementCenterPage">
         <h1>Kanban board</h1>
-    </div>
 
-    <div class="search">
-        <form th:method="GET" th:action="@{/search}">
-            <div class="inputFields">
-                <div class="inputField">
-                    <label for="text">Search string</label>
-                    <input id="text" type="text" name="text" value="">
-                    <div class="buttonContainer">
-                        <input type="submit" value="Search">
-                        <form th:method="GET" th:href="@{/}">
-                            <input type="submit" value="Clear">
-                        </form>
+        <div class="search">
+            <form th:method="GET" th:action="@{/search}">
+                <div class="inputFields">
+                    <div class="inputField">
+                        <label for="text">Search string</label>
+                        <input id="text" type="text" name="text" value="">
+                        <div class="buttonContainer">
+                            <input type="submit" value="Search">
+                            <form th:method="GET" th:href="@{/}">
+                                <input type="submit" value="Clear">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="inputField">
+                        <label for="field">Search by</label>
+                        <select class="selector" id="field" name="field">
+                            <option th:value="name" th:text="Name"></option>
+                            <option th:value="description" th:text="Description"></option>
+                            <option th:value="person" th:text="Person"></option>
+                        </select>
                     </div>
                 </div>
-                <div class="inputField">
-                    <label for="field">Search by</label>
-                    <select class="selector" id="field" name="field">
-                        <option th:value="name" th:text="Name"></option>
-                        <option th:value="description" th:text="Description"></option>
-                        <option th:value="person" th:text="Person"></option>
-                    </select>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
+
 
     <div class="board">
         <div class="statusColumn">

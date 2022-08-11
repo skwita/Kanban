@@ -61,14 +61,15 @@
 }
 
 .elementCenterPage {
+    position: relative;
     text-align: center;
     margin: 10px 0;
 }
 
 .search {
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 .inputFields {
     margin: 3px;
